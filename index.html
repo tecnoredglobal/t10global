@@ -1,0 +1,1497 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a2547" />
+  <title>T10Global — A global network of top-tier professional firms</title>
+  <meta name="description" content="T10Global is a curated alliance of professional firms delivering audit, tax, legal, consulting and technology services to ambitious businesses." />
+
+  <!--
+    REPLACE BEFORE LAUNCH:
+    - Office addresses (currently placeholders in Tenerife + Madrid)
+    - Contact email: info@t10global.com
+    - JSON-LD Organization sameAs (LinkedIn, etc.)
+    - Open Graph image (currently omitted - add og-image.png if needed)
+  -->
+
+  <link rel="canonical" href="https://t10global.com/" />
+  <link rel="alternate" hreflang="en" href="https://t10global.com/" />
+  <link rel="alternate" hreflang="es" href="https://t10global.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://t10global.com/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://t10global.com/" />
+  <meta property="og:title" content="T10Global — A global network of top-tier professional firms" />
+  <meta property="og:description" content="A curated alliance of professional firms delivering audit, tax, legal, consulting and technology services." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="T10Global" />
+  <meta name="twitter:description" content="A curated alliance of professional firms delivering audit, tax, legal, consulting and technology services." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "T10Global",
+    "url": "https://t10global.com",
+    "logo": "https://t10global.com/favicon.svg",
+    "description": "A curated alliance of professional firms delivering audit, tax, legal, consulting and technology services.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@t10global.com",
+      "contactType": "customer support",
+      "availableLanguage": ["en", "es"]
+    },
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. de Anaga 24",
+        "addressLocality": "Santa Cruz de Tenerife",
+        "postalCode": "38001",
+        "addressCountry": "ES"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Paseo de la Castellana 95",
+        "addressLocality": "Madrid",
+        "postalCode": "28046",
+        "addressCountry": "ES"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --navy-900: #0a2547;
+      --navy-800: #0e2e57;
+      --navy-700: #143a6b;
+      --blue-600: #1f6fb0;
+      --blue-500: #2d7fc1;
+      --teal-600: #0f9d8f;
+      --teal-500: #14b8a6;
+      --teal-50:  #ecfdf9;
+      --ink-900:  #0f1b2d;
+      --ink-700:  #233148;
+      --ink-600:  #475569;
+      --ink-500:  #64748b;
+      --bg-soft:  #f5f8fc;
+      --bg-softer:#fafcfe;
+      --line:     #dbe4ef;
+      --line-2:   #e6ecf4;
+      --white:    #ffffff;
+      --radius:   18px;
+      --radius-lg:26px;
+      --shadow-1: 0 10px 24px rgba(13,47,95,0.06);
+      --shadow-2: 0 22px 48px rgba(13,47,95,0.10);
+      --shadow-3: 0 32px 68px rgba(13,47,95,0.14);
+      --container: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink-900);
+      background: var(--white);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: var(--blue-600); }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--teal-500);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--navy-900);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 0 0 8px 0;
+      z-index: 1000;
+      text-decoration: none;
+    }
+    .skip-link:focus { left: 0; }
+
+    .container {
+      width: min(var(--container), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: saturate(180%) blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--navy-900);
+    }
+
+    .brand-mark { width: 40px; height: 40px; flex-shrink: 0; }
+
+    .brand-wordmark {
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+      line-height: 1;
+    }
+    .brand-wordmark .t {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--navy-900);
+    }
+    .brand-wordmark .ten {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--navy-900);
+    }
+    .brand-wordmark .ten .zero { color: var(--teal-500); }
+    .brand-wordmark .global {
+      font-size: 1.55rem;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: var(--ink-700);
+      margin-left: 2px;
+    }
+
+    nav.primary ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
+
+    nav.primary a {
+      text-decoration: none;
+      color: var(--ink-700);
+      font-weight: 600;
+      font-size: 0.94rem;
+      transition: color 0.18s ease;
+    }
+    nav.primary a:hover { color: var(--navy-900); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px;
+      gap: 2px;
+    }
+    .lang-toggle button {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      color: var(--ink-600);
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+    .lang-toggle button[aria-pressed="true"] {
+      background: var(--navy-900);
+      color: #fff;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.94rem;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--navy-900), var(--blue-500));
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(13,47,95,0.22);
+    }
+    .btn-primary:hover { box-shadow: 0 18px 38px rgba(13,47,95,0.30); }
+    .btn-secondary {
+      background: #fff;
+      border-color: var(--line);
+      color: var(--navy-900);
+    }
+    .btn-secondary:hover { border-color: var(--navy-700); }
+    .btn-ghost-light {
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.28);
+      color: #fff;
+    }
+    .btn-ghost-light:hover { background: rgba(255,255,255,0.18); }
+
+    .nav-cta { padding: 10px 18px; font-size: 0.9rem; }
+
+    /* ========== HERO ========== */
+    .hero {
+      background:
+        radial-gradient(900px 480px at 90% -10%, rgba(20,184,166,0.12), transparent 60%),
+        radial-gradient(800px 500px at -10% 30%, rgba(45,127,193,0.10), transparent 60%),
+        linear-gradient(180deg, #f8fbff 0%, #eef5fb 100%);
+      padding: 88px 0 72px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(20,184,166,0.12);
+      color: var(--teal-600);
+      font-weight: 700;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 20px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal-500);
+    }
+
+    .hero h1 {
+      margin: 0 0 22px;
+      font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+      line-height: 1.04;
+      color: var(--navy-900);
+      letter-spacing: -0.035em;
+      font-weight: 800;
+    }
+    .hero h1 .accent {
+      background: linear-gradient(135deg, var(--teal-500), var(--blue-500));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-lead {
+      margin: 0 0 32px;
+      font-size: 1.12rem;
+      max-width: 620px;
+      color: var(--ink-600);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 620px;
+    }
+    .stat {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      backdrop-filter: blur(6px);
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      color: var(--navy-900);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .stat span {
+      font-size: 0.84rem;
+      color: var(--ink-600);
+      line-height: 1.35;
+      display: block;
+    }
+
+    .hero-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-2);
+      position: relative;
+    }
+    .hero-card::before, .hero-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(8px);
+      pointer-events: none;
+    }
+    .hero-card::before {
+      width: 130px; height: 130px;
+      background: rgba(20,184,166,0.18);
+      top: -28px; right: -28px;
+    }
+    .hero-card::after {
+      width: 90px; height: 90px;
+      background: rgba(45,127,193,0.16);
+      bottom: -24px; left: -16px;
+    }
+
+    .constellation {
+      width: 100%;
+      max-width: 260px;
+      margin: 0 auto 24px;
+      display: block;
+    }
+
+    .pillars {
+      display: grid;
+      gap: 10px;
+    }
+    .pillar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+    }
+    .pillar-name {
+      font-weight: 700;
+      color: var(--navy-900);
+      font-size: 0.95rem;
+    }
+    .pillar-tag {
+      font-size: 0.78rem;
+      color: var(--teal-600);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ========== SECTIONS ========== */
+    section { padding: 88px 0; }
+
+    .section-title {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 56px;
+    }
+    .section-title .eyebrow { margin-bottom: 14px; }
+    .section-title h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.9rem, 3.3vw, 2.5rem);
+      color: var(--navy-900);
+      letter-spacing: -0.03em;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+    .section-title p {
+      margin: 0;
+      color: var(--ink-600);
+      font-size: 1.04rem;
+    }
+
+    /* ========== "10" MEANING ========== */
+    .ten-meaning {
+      background: linear-gradient(180deg, #fff, var(--bg-softer));
+      border-top: 1px solid var(--line-2);
+      border-bottom: 1px solid var(--line-2);
+    }
+    .ten-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .ten-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      box-shadow: var(--shadow-1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .ten-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-2);
+    }
+    .ten-card .num {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--teal-600);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .ten-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+      color: var(--navy-900);
+      font-weight: 700;
+    }
+    .ten-card p {
+      margin: 0;
+      color: var(--ink-600);
+      font-size: 0.94rem;
+    }
+
+    /* ========== SERVICES ========== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+    .service {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+      text-align: left;
+      box-shadow: var(--shadow-1);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .service::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal-500), var(--blue-500));
+      opacity: 0;
+      transition: opacity 0.22s ease;
+    }
+    .service:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-2);
+      border-color: var(--line-2);
+    }
+    .service:hover::before { opacity: 1; }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(20,184,166,0.14), rgba(45,127,193,0.12));
+      color: var(--navy-900);
+    }
+    .service-icon svg { width: 26px; height: 26px; }
+    .service h3 {
+      margin: 0 0 8px;
+      color: var(--navy-900);
+      font-size: 1.06rem;
+      font-weight: 700;
+    }
+    .service p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--ink-600);
+      line-height: 1.5;
+    }
+
+    /* ========== MODEL ========== */
+    .model { background: var(--bg-soft); }
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .model-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-1);
+      position: relative;
+    }
+    .model-card .step {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--teal-600);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .model-card h3 {
+      margin: 0 0 12px;
+      color: var(--navy-900);
+      font-size: 1.22rem;
+      font-weight: 700;
+    }
+    .model-card p {
+      margin: 0;
+      color: var(--ink-600);
+      font-size: 0.96rem;
+    }
+
+    /* ========== WHY ========== */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .why-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      box-shadow: var(--shadow-1);
+    }
+    .why-card .why-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--navy-900), var(--blue-500));
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .why-card .why-icon svg { width: 22px; height: 22px; }
+    .why-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy-900);
+      font-size: 1.04rem;
+      font-weight: 700;
+    }
+    .why-card p { margin: 0; color: var(--ink-600); font-size: 0.93rem; }
+
+    /* ========== OFFICES ========== */
+    .offices { background: var(--bg-soft); }
+    .offices-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    .office {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-1);
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+    }
+    .office-flag {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--navy-900), var(--blue-500));
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .office-flag svg { width: 26px; height: 26px; }
+    .office .tag {
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal-600);
+      margin-bottom: 6px;
+    }
+    .office h3 {
+      margin: 0 0 8px;
+      color: var(--navy-900);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .office address {
+      margin: 0;
+      font-style: normal;
+      color: var(--ink-600);
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+
+    /* ========== CTA ========== */
+    .cta {
+      padding: 92px 0;
+      background:
+        radial-gradient(700px 360px at 90% 20%, rgba(20,184,166,0.22), transparent 60%),
+        radial-gradient(600px 340px at 10% 80%, rgba(45,127,193,0.20), transparent 60%),
+        linear-gradient(135deg, var(--navy-900), #123b75 65%, var(--blue-600));
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .cta h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      letter-spacing: -0.03em;
+      font-weight: 800;
+    }
+    .cta p {
+      margin: 0;
+      color: rgba(255,255,255,0.82);
+      max-width: 600px;
+      font-size: 1.04rem;
+    }
+    .cta .btn-ghost-light { padding: 15px 26px; }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--navy-900);
+      color: rgba(255,255,255,0.78);
+      padding: 56px 0 28px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+    .footer-brand .brand-wordmark .t,
+    .footer-brand .brand-wordmark .ten,
+    .footer-brand .brand-wordmark .global { color: #fff; }
+    .footer-brand .brand-wordmark .ten .zero { color: var(--teal-500); }
+    .footer-tagline {
+      margin: 14px 0 0;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      max-width: 320px;
+    }
+    .footer-col h4 {
+      margin: 0 0 16px;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .footer-col a, .footer-col span {
+      color: rgba(255,255,255,0.72);
+      text-decoration: none;
+      font-size: 0.94rem;
+    }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-top: 24px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-legal a { color: rgba(255,255,255,0.65); text-decoration: none; }
+    .footer-legal a:hover { color: #fff; }
+
+    /* ========== ANIMATIONS ========== */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+      .btn { transition: none; }
+    }
+
+    .lang-fade { transition: opacity 0.15s ease; }
+    .lang-fade.fading { opacity: 0; }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1100px) {
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .ten-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-card { max-width: 480px; }
+    }
+
+    @media (max-width: 880px) {
+      nav.primary ul { display: none; }
+      .model-grid { grid-template-columns: 1fr; }
+      .offices-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      section { padding: 64px 0; }
+      .hero { padding: 64px 0 56px; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, var(--container)); }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .ten-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn { width: 100%; }
+      .cta-box { flex-direction: column; align-items: flex-start; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .nav-cta { display: none; }
+      .office { flex-direction: column; gap: 16px; }
+      .brand-wordmark .t,
+      .brand-wordmark .ten,
+      .brand-wordmark .global { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="T10Global home">
+        <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="brandG" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0a2547"/>
+              <stop offset="100%" stop-color="#143a6b"/>
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="14" fill="url(#brandG)"/>
+          <circle cx="32" cy="32" r="20" fill="none" stroke="#ffffff" stroke-opacity="0.20" stroke-width="1.5"/>
+          <circle cx="32" cy="12" r="3.2" fill="#14b8a6"/>
+          <circle cx="44" cy="16" r="2.0" fill="#ffffff" fill-opacity="0.85"/>
+          <circle cx="52" cy="26" r="2.0" fill="#ffffff" fill-opacity="0.7"/>
+          <circle cx="52" cy="38" r="2.0" fill="#ffffff" fill-opacity="0.55"/>
+          <circle cx="44" cy="48" r="2.0" fill="#ffffff" fill-opacity="0.55"/>
+          <circle cx="32" cy="52" r="2.0" fill="#ffffff" fill-opacity="0.55"/>
+          <circle cx="20" cy="48" r="2.0" fill="#ffffff" fill-opacity="0.55"/>
+          <circle cx="12" cy="38" r="2.0" fill="#ffffff" fill-opacity="0.7"/>
+          <circle cx="12" cy="26" r="2.0" fill="#ffffff" fill-opacity="0.85"/>
+          <circle cx="20" cy="16" r="2.6" fill="#14b8a6"/>
+        </svg>
+        <span class="brand-wordmark">
+          <span class="t">T</span><span class="ten">1<span class="zero">0</span></span><span class="global">global</span>
+        </span>
+      </a>
+
+      <nav class="primary" aria-label="Primary">
+        <ul>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#model" data-i18n="nav.model">Model</a></li>
+          <li><a href="#offices" data-i18n="nav.offices">Offices</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+        </div>
+        <a class="btn btn-primary nav-cta" href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div data-reveal>
+          <span class="eyebrow" data-i18n="hero.eyebrow">Global network of professional firms</span>
+          <h1>
+            <span data-i18n="hero.title.part1">The top ten disciplines.</span>
+            <span class="accent" data-i18n="hero.title.part2">One global network.</span>
+          </h1>
+          <p class="hero-lead" data-i18n="hero.lead">
+            T10Global is a curated alliance of independent firms delivering audit, tax, legal, consulting and technology services with the proximity of a local partner and the reach of a global network.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#services" data-i18n="hero.cta.primary">Explore our services</a>
+            <a class="btn btn-secondary" href="#contact" data-i18n="hero.cta.secondary">Talk to us</a>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <strong>5</strong>
+              <span data-i18n="hero.stat1">Integrated service lines</span>
+            </div>
+            <div class="stat">
+              <strong>2</strong>
+              <span data-i18n="hero.stat2">Offices across Spain</span>
+            </div>
+            <div class="stat">
+              <strong>1</strong>
+              <span data-i18n="hero.stat3">Unified global network</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card" data-reveal>
+          <svg class="constellation" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <radialGradient id="haloG" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#14b8a6" stop-opacity="0.18"/>
+                <stop offset="100%" stop-color="#14b8a6" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="ringG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0a2547"/>
+                <stop offset="100%" stop-color="#2d7fc1"/>
+              </linearGradient>
+            </defs>
+            <circle cx="120" cy="120" r="100" fill="url(#haloG)"/>
+            <circle cx="120" cy="120" r="78" fill="none" stroke="url(#ringG)" stroke-width="1.5" stroke-opacity="0.35"/>
+            <!-- 10 nodes around a circle, with two highlight nodes at the 10 o'clock area -->
+            <g fill="#0a2547">
+              <circle cx="120" cy="42" r="7"/>
+              <circle cx="166" cy="56" r="5"/>
+              <circle cx="196" cy="92" r="5"/>
+              <circle cx="200" cy="138" r="5"/>
+              <circle cx="174" cy="178" r="5"/>
+              <circle cx="132" cy="196" r="5"/>
+              <circle cx="86" cy="190" r="5"/>
+              <circle cx="50" cy="162" r="5"/>
+              <circle cx="38" cy="118" r="5"/>
+            </g>
+            <!-- Highlight (the "10" node at top-left) -->
+            <circle cx="58" cy="72" r="9" fill="#14b8a6"/>
+            <circle cx="58" cy="72" r="14" fill="none" stroke="#14b8a6" stroke-opacity="0.35" stroke-width="2"/>
+            <!-- Connecting lines from highlight to others -->
+            <g stroke="#2d7fc1" stroke-opacity="0.28" stroke-width="1.2" fill="none">
+              <line x1="58" y1="72" x2="120" y2="42"/>
+              <line x1="58" y1="72" x2="38" y2="118"/>
+              <line x1="58" y1="72" x2="166" y2="56"/>
+              <line x1="58" y1="72" x2="50" y2="162"/>
+              <line x1="58" y1="72" x2="120" y2="120"/>
+            </g>
+            <!-- Center "10" label -->
+            <circle cx="120" cy="120" r="34" fill="#fff" stroke="#dbe4ef" stroke-width="1.5"/>
+            <text x="120" y="132" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="32" font-weight="800" fill="#0a2547" letter-spacing="-1">
+              <tspan>1</tspan><tspan fill="#14b8a6">0</tspan>
+            </text>
+          </svg>
+          <div class="pillars" aria-label="Service pillars">
+            <div class="pillar"><span class="pillar-name" data-i18n="pillar.audit">Audit</span><span class="pillar-tag" data-i18n="pillar.audit.tag">Trust &amp; control</span></div>
+            <div class="pillar"><span class="pillar-name" data-i18n="pillar.tax">Tax</span><span class="pillar-tag" data-i18n="pillar.tax.tag">Regulatory rigour</span></div>
+            <div class="pillar"><span class="pillar-name" data-i18n="pillar.legal">Legal</span><span class="pillar-tag" data-i18n="pillar.legal.tag">Legal certainty</span></div>
+            <div class="pillar"><span class="pillar-name" data-i18n="pillar.consulting">Consulting &amp; Corporate Finance</span><span class="pillar-tag" data-i18n="pillar.consulting.tag">Strategic vision</span></div>
+            <div class="pillar"><span class="pillar-name" data-i18n="pillar.tech">Tech &amp; Software</span><span class="pillar-tag" data-i18n="pillar.tech.tag">Digital advantage</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHAT 10 MEANS ========== -->
+    <section class="ten-meaning" id="about">
+      <div class="container">
+        <div class="section-title" data-reveal>
+          <span class="eyebrow" data-i18n="ten.eyebrow">The meaning behind the 10</span>
+          <h2 data-i18n="ten.title">Why "10"</h2>
+          <p data-i18n="ten.lead">Ten is the standard of top-tier work. Ten is the shorthand for a complete answer. Ten is what we set out to be for every client we serve.</p>
+        </div>
+        <div class="ten-grid">
+          <article class="ten-card" data-reveal>
+            <div class="num">01</div>
+            <h3 data-i18n="ten.c1.title">Top-tier work</h3>
+            <p data-i18n="ten.c1.body">We aim for a 10 on every engagement, with senior partners involved end-to-end.</p>
+          </article>
+          <article class="ten-card" data-reveal>
+            <div class="num">02</div>
+            <h3 data-i18n="ten.c2.title">A complete answer</h3>
+            <p data-i18n="ten.c2.body">A single point of contact orchestrates audit, tax, legal, consulting and technology together.</p>
+          </article>
+          <article class="ten-card" data-reveal>
+            <div class="num">03</div>
+            <h3 data-i18n="ten.c3.title">A curated alliance</h3>
+            <p data-i18n="ten.c3.body">Independent specialist firms, hand-picked and aligned under a single standard of care.</p>
+          </article>
+          <article class="ten-card" data-reveal>
+            <div class="num">04</div>
+            <h3 data-i18n="ten.c4.title">Global by design</h3>
+            <p data-i18n="ten.c4.body">Local proximity in every office, network capability whenever a client crosses a border.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section id="services">
+      <div class="container">
+        <div class="section-title" data-reveal>
+          <span class="eyebrow" data-i18n="services.eyebrow">What we do</span>
+          <h2 data-i18n="services.title">Five disciplines. One integrated response.</h2>
+          <p data-i18n="services.lead">Each line operates with its own depth of specialisation, brought together under a shared standard for quality, communication and accountability.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service" data-reveal>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l2 2 4-4"/><path d="M12 3l8 4v5c0 5-3.4 9.2-8 10-4.6-.8-8-5-8-10V7l8-4z"/></svg>
+            </div>
+            <h3 data-i18n="service.audit.title">Audit</h3>
+            <p data-i18n="service.audit.body">Independent assurance, internal control review and transparency that earns confidence with shareholders, regulators and partners.</p>
+          </article>
+          <article class="service" data-reveal>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/><path d="M9 12h6"/></svg>
+            </div>
+            <h3 data-i18n="service.tax.title">Tax</h3>
+            <p data-i18n="service.tax.body">Strategic tax planning, compliance and specialised advisory for groups, family businesses and cross-border operations.</p>
+          </article>
+          <article class="service" data-reveal>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 21h14"/><path d="M5 8h14"/><path d="M8 8l-3 7h6L8 8z"/><path d="M16 8l-3 7h6l-3-7z"/></svg>
+            </div>
+            <h3 data-i18n="service.legal.title">Legal</h3>
+            <p data-i18n="service.legal.body">Corporate, commercial, contractual and regulatory counsel grounded in three decades of experience with the business world.</p>
+          </article>
+          <article class="service" data-reveal>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+            </div>
+            <h3 data-i18n="service.consulting.title">Consulting &amp; Corporate Finance</h3>
+            <p data-i18n="service.consulting.body">Strategy, transformation, valuations and transaction support to help leadership teams act with conviction.</p>
+          </article>
+          <article class="service" data-reveal>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-5 6 5 6"/><path d="M16 6l5 6-5 6"/><path d="M14 4l-4 16"/></svg>
+            </div>
+            <h3 data-i18n="service.tech.title">Tech &amp; Software</h3>
+            <p data-i18n="service.tech.body">Digital transformation, data, automation, AI and custom software solutions built around the way your business actually works.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MODEL ========== -->
+    <section class="model" id="model">
+      <div class="container">
+        <div class="section-title" data-reveal>
+          <span class="eyebrow" data-i18n="model.eyebrow">How the network works</span>
+          <h2 data-i18n="model.title">A unified brand. Specialist firms. A scalable alliance.</h2>
+          <p data-i18n="model.lead">T10Global is built so the client always feels one team — and so member firms keep the independence they need to be the best in their discipline.</p>
+        </div>
+        <div class="model-grid">
+          <article class="model-card" data-reveal>
+            <div class="step" data-i18n="model.s1.step">01 · Brand</div>
+            <h3 data-i18n="model.s1.title">A single seal of quality</h3>
+            <p data-i18n="model.s1.body">T10Global stands for a shared promise: senior involvement, integrated thinking, and clear communication on every engagement.</p>
+          </article>
+          <article class="model-card" data-reveal>
+            <div class="step" data-i18n="model.s2.step">02 · Firms</div>
+            <h3 data-i18n="model.s2.title">Specialists, not generalists</h3>
+            <p data-i18n="model.s2.body">Each member firm leads its discipline. Together, they cover the full set of needs of a modern, ambitious business.</p>
+          </article>
+          <article class="model-card" data-reveal>
+            <div class="step" data-i18n="model.s3.step">03 · Alliance</div>
+            <h3 data-i18n="model.s3.title">Designed to grow</h3>
+            <p data-i18n="model.s3.body">The model scales naturally — new offices, new disciplines and new partners can join without diluting the standard.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHY ========== -->
+    <section id="why">
+      <div class="container">
+        <div class="section-title" data-reveal>
+          <span class="eyebrow" data-i18n="why.eyebrow">Why T10Global</span>
+          <h2 data-i18n="why.title">Built around what clients actually value.</h2>
+          <p data-i18n="why.lead">Four principles that show up in every engagement, from a first conversation to a multi-year partnership.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-card" data-reveal>
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+            </div>
+            <h3 data-i18n="why.c1.title">Partner-led</h3>
+            <p data-i18n="why.c1.body">A senior partner is involved in every engagement, end to end. No hand-offs after the kick-off meeting.</p>
+          </article>
+          <article class="why-card" data-reveal>
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-7.6-4.7L3 21l1.7-1.4A8.38 8.38 0 0 1 3 11.5a8.5 8.5 0 0 1 17 0z"/></svg>
+            </div>
+            <h3 data-i18n="why.c2.title">Constant communication</h3>
+            <p data-i18n="why.c2.body">Clear, fast and honest. Clients hear from us before they ask — and never have to chase an update.</p>
+          </article>
+          <article class="why-card" data-reveal>
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg>
+            </div>
+            <h3 data-i18n="why.c3.title">Integrated response</h3>
+            <p data-i18n="why.c3.body">When a question touches several disciplines, the right specialists arrive together — not in a queue.</p>
+          </article>
+          <article class="why-card" data-reveal>
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l-3-3 3-3"/><path d="M15 6l3 3-3 3"/><path d="M6 15h12"/><path d="M6 9h12"/></svg>
+            </div>
+            <h3 data-i18n="why.c4.title">Technology-driven</h3>
+            <p data-i18n="why.c4.body">Modern tools, automation and AI sit inside every line of service — not just the technology practice.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== OFFICES ========== -->
+    <section class="offices" id="offices">
+      <div class="container">
+        <div class="section-title" data-reveal>
+          <span class="eyebrow" data-i18n="offices.eyebrow">Where to find us</span>
+          <h2 data-i18n="offices.title">Two offices. One team.</h2>
+          <p data-i18n="offices.lead">Headquartered in the Canary Islands with a presence in the heart of Madrid.</p>
+        </div>
+        <div class="offices-grid">
+          <article class="office" data-reveal>
+            <div class="office-flag" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-7.5-7-13a7 7 0 1 1 14 0c0 5.5-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <div>
+              <div class="tag" data-i18n="offices.hq.tag">Headquarters</div>
+              <h3 data-i18n="offices.hq.title">Santa Cruz de Tenerife</h3>
+              <address data-i18n="offices.hq.body">Av. de Anaga 24<br>38001 Santa Cruz de Tenerife<br>Canary Islands, Spain</address>
+            </div>
+          </article>
+          <article class="office" data-reveal>
+            <div class="office-flag" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>
+            </div>
+            <div>
+              <div class="tag" data-i18n="offices.md.tag">Office</div>
+              <h3 data-i18n="offices.md.title">Madrid</h3>
+              <address data-i18n="offices.md.body">Paseo de la Castellana 95<br>28046 Madrid<br>Spain</address>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta" id="contact">
+      <div class="container cta-box">
+        <div data-reveal>
+          <h2 data-i18n="cta.title">Let's talk about what's next.</h2>
+          <p data-i18n="cta.lead">Tell us about your business, your challenge or the opportunity in front of you. A partner will get back to you within one working day.</p>
+        </div>
+        <a class="btn btn-ghost-light" href="mailto:info@t10global.com" data-i18n="cta.button">info@t10global.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#top" class="brand" aria-label="T10Global home">
+            <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="64" height="64" rx="14" fill="#143a6b"/>
+              <circle cx="32" cy="32" r="20" fill="none" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.5"/>
+              <circle cx="32" cy="12" r="3.2" fill="#14b8a6"/>
+              <circle cx="20" cy="16" r="2.6" fill="#14b8a6"/>
+              <circle cx="44" cy="16" r="2" fill="#ffffff" fill-opacity="0.7"/>
+              <circle cx="52" cy="26" r="2" fill="#ffffff" fill-opacity="0.7"/>
+              <circle cx="52" cy="38" r="2" fill="#ffffff" fill-opacity="0.55"/>
+              <circle cx="44" cy="48" r="2" fill="#ffffff" fill-opacity="0.55"/>
+              <circle cx="32" cy="52" r="2" fill="#ffffff" fill-opacity="0.55"/>
+              <circle cx="20" cy="48" r="2" fill="#ffffff" fill-opacity="0.55"/>
+              <circle cx="12" cy="38" r="2" fill="#ffffff" fill-opacity="0.7"/>
+              <circle cx="12" cy="26" r="2" fill="#ffffff" fill-opacity="0.7"/>
+            </svg>
+            <span class="brand-wordmark">
+              <span class="t">T</span><span class="ten">1<span class="zero">0</span></span><span class="global">global</span>
+            </span>
+          </a>
+          <p class="footer-tagline" data-i18n="footer.tagline">A curated alliance of professional firms — audit, tax, legal, consulting and technology, delivered as one team.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.services">Services</h4>
+          <ul>
+            <li><a href="#services" data-i18n="service.audit.title">Audit</a></li>
+            <li><a href="#services" data-i18n="service.tax.title">Tax</a></li>
+            <li><a href="#services" data-i18n="service.legal.title">Legal</a></li>
+            <li><a href="#services" data-i18n="service.consulting.title">Consulting &amp; Corporate Finance</a></li>
+            <li><a href="#services" data-i18n="service.tech.title">Tech &amp; Software</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.network">Network</h4>
+          <ul>
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#model" data-i18n="nav.model">Model</a></li>
+            <li><a href="#why" data-i18n="footer.why">Why T10Global</a></li>
+            <li><a href="#offices" data-i18n="nav.offices">Offices</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <ul>
+            <li><a href="mailto:info@t10global.com">info@t10global.com</a></li>
+            <li><span data-i18n="footer.hqline">HQ — Tenerife, Spain</span></li>
+            <li><span data-i18n="footer.mdline">Office — Madrid, Spain</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.copyright">© 2026 T10Global. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="#" data-i18n="footer.legal.privacy">Privacy</a>
+          <a href="#" data-i18n="footer.legal.notice">Legal notice</a>
+          <a href="#" data-i18n="footer.legal.cookies">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+
+    var i18n = {
+      en: {
+        'skip': 'Skip to content',
+        'nav.about': 'About',
+        'nav.services': 'Services',
+        'nav.model': 'Model',
+        'nav.offices': 'Offices',
+        'nav.contact': 'Contact',
+        'hero.eyebrow': 'Global network of professional firms',
+        'hero.title.part1': 'The top ten disciplines.',
+        'hero.title.part2': 'One global network.',
+        'hero.lead': 'T10Global is a curated alliance of independent firms delivering audit, tax, legal, consulting and technology services with the proximity of a local partner and the reach of a global network.',
+        'hero.cta.primary': 'Explore our services',
+        'hero.cta.secondary': 'Talk to us',
+        'hero.stat1': 'Integrated service lines',
+        'hero.stat2': 'Offices across Spain',
+        'hero.stat3': 'Unified global network',
+        'pillar.audit': 'Audit',
+        'pillar.audit.tag': 'Trust & control',
+        'pillar.tax': 'Tax',
+        'pillar.tax.tag': 'Regulatory rigour',
+        'pillar.legal': 'Legal',
+        'pillar.legal.tag': 'Legal certainty',
+        'pillar.consulting': 'Consulting & Corporate Finance',
+        'pillar.consulting.tag': 'Strategic vision',
+        'pillar.tech': 'Tech & Software',
+        'pillar.tech.tag': 'Digital advantage',
+        'ten.eyebrow': 'The meaning behind the 10',
+        'ten.title': 'Why "10"',
+        'ten.lead': 'Ten is the standard of top-tier work. Ten is the shorthand for a complete answer. Ten is what we set out to be for every client we serve.',
+        'ten.c1.title': 'Top-tier work',
+        'ten.c1.body': 'We aim for a 10 on every engagement, with senior partners involved end-to-end.',
+        'ten.c2.title': 'A complete answer',
+        'ten.c2.body': 'A single point of contact orchestrates audit, tax, legal, consulting and technology together.',
+        'ten.c3.title': 'A curated alliance',
+        'ten.c3.body': 'Independent specialist firms, hand-picked and aligned under a single standard of care.',
+        'ten.c4.title': 'Global by design',
+        'ten.c4.body': 'Local proximity in every office, network capability whenever a client crosses a border.',
+        'services.eyebrow': 'What we do',
+        'services.title': 'Five disciplines. One integrated response.',
+        'services.lead': 'Each line operates with its own depth of specialisation, brought together under a shared standard for quality, communication and accountability.',
+        'service.audit.title': 'Audit',
+        'service.audit.body': 'Independent assurance, internal control review and transparency that earns confidence with shareholders, regulators and partners.',
+        'service.tax.title': 'Tax',
+        'service.tax.body': 'Strategic tax planning, compliance and specialised advisory for groups, family businesses and cross-border operations.',
+        'service.legal.title': 'Legal',
+        'service.legal.body': 'Corporate, commercial, contractual and regulatory counsel grounded in three decades of experience with the business world.',
+        'service.consulting.title': 'Consulting & Corporate Finance',
+        'service.consulting.body': 'Strategy, transformation, valuations and transaction support to help leadership teams act with conviction.',
+        'service.tech.title': 'Tech & Software',
+        'service.tech.body': 'Digital transformation, data, automation, AI and custom software solutions built around the way your business actually works.',
+        'model.eyebrow': 'How the network works',
+        'model.title': 'A unified brand. Specialist firms. A scalable alliance.',
+        'model.lead': 'T10Global is built so the client always feels one team — and so member firms keep the independence they need to be the best in their discipline.',
+        'model.s1.step': '01 · Brand',
+        'model.s1.title': 'A single seal of quality',
+        'model.s1.body': 'T10Global stands for a shared promise: senior involvement, integrated thinking, and clear communication on every engagement.',
+        'model.s2.step': '02 · Firms',
+        'model.s2.title': 'Specialists, not generalists',
+        'model.s2.body': 'Each member firm leads its discipline. Together, they cover the full set of needs of a modern, ambitious business.',
+        'model.s3.step': '03 · Alliance',
+        'model.s3.title': 'Designed to grow',
+        'model.s3.body': 'The model scales naturally — new offices, new disciplines and new partners can join without diluting the standard.',
+        'why.eyebrow': 'Why T10Global',
+        'why.title': 'Built around what clients actually value.',
+        'why.lead': 'Four principles that show up in every engagement, from a first conversation to a multi-year partnership.',
+        'why.c1.title': 'Partner-led',
+        'why.c1.body': 'A senior partner is involved in every engagement, end to end. No hand-offs after the kick-off meeting.',
+        'why.c2.title': 'Constant communication',
+        'why.c2.body': 'Clear, fast and honest. Clients hear from us before they ask — and never have to chase an update.',
+        'why.c3.title': 'Integrated response',
+        'why.c3.body': 'When a question touches several disciplines, the right specialists arrive together — not in a queue.',
+        'why.c4.title': 'Technology-driven',
+        'why.c4.body': 'Modern tools, automation and AI sit inside every line of service — not just the technology practice.',
+        'offices.eyebrow': 'Where to find us',
+        'offices.title': 'Two offices. One team.',
+        'offices.lead': 'Headquartered in the Canary Islands with a presence in the heart of Madrid.',
+        'offices.hq.tag': 'Headquarters',
+        'offices.hq.title': 'Santa Cruz de Tenerife',
+        'offices.hq.body': 'Av. de Anaga 24<br>38001 Santa Cruz de Tenerife<br>Canary Islands, Spain',
+        'offices.md.tag': 'Office',
+        'offices.md.title': 'Madrid',
+        'offices.md.body': 'Paseo de la Castellana 95<br>28046 Madrid<br>Spain',
+        'cta.title': "Let's talk about what's next.",
+        'cta.lead': 'Tell us about your business, your challenge or the opportunity in front of you. A partner will get back to you within one working day.',
+        'cta.button': 'info@t10global.com',
+        'footer.tagline': 'A curated alliance of professional firms — audit, tax, legal, consulting and technology, delivered as one team.',
+        'footer.services': 'Services',
+        'footer.network': 'Network',
+        'footer.contact': 'Contact',
+        'footer.why': 'Why T10Global',
+        'footer.hqline': 'HQ — Tenerife, Spain',
+        'footer.mdline': 'Office — Madrid, Spain',
+        'footer.copyright': '© 2026 T10Global. All rights reserved.',
+        'footer.legal.privacy': 'Privacy',
+        'footer.legal.notice': 'Legal notice',
+        'footer.legal.cookies': 'Cookies',
+        '_doc.title': 'T10Global — A global network of top-tier professional firms',
+        '_doc.description': 'T10Global is a curated alliance of professional firms delivering audit, tax, legal, consulting and technology services to ambitious businesses.'
+      },
+      es: {
+        'skip': 'Saltar al contenido',
+        'nav.about': 'Nosotros',
+        'nav.services': 'Servicios',
+        'nav.model': 'Modelo',
+        'nav.offices': 'Oficinas',
+        'nav.contact': 'Contacto',
+        'hero.eyebrow': 'Red global de firmas profesionales',
+        'hero.title.part1': 'Las diez disciplinas clave.',
+        'hero.title.part2': 'Una sola red global.',
+        'hero.lead': 'T10Global es una alianza seleccionada de firmas independientes que prestan servicios de auditoría, fiscal, legal, consultoría y tecnología con la cercanía de un socio local y el alcance de una red global.',
+        'hero.cta.primary': 'Ver nuestros servicios',
+        'hero.cta.secondary': 'Hablemos',
+        'hero.stat1': 'Líneas de servicio integradas',
+        'hero.stat2': 'Oficinas en España',
+        'hero.stat3': 'Red global unificada',
+        'pillar.audit': 'Auditoría',
+        'pillar.audit.tag': 'Confianza y control',
+        'pillar.tax': 'Fiscal',
+        'pillar.tax.tag': 'Rigor normativo',
+        'pillar.legal': 'Legal',
+        'pillar.legal.tag': 'Seguridad jurídica',
+        'pillar.consulting': 'Consultoría y Corporate Finance',
+        'pillar.consulting.tag': 'Visión estratégica',
+        'pillar.tech': 'Tecnología y Software',
+        'pillar.tech.tag': 'Ventaja digital',
+        'ten.eyebrow': 'El significado detrás del 10',
+        'ten.title': 'Por qué "10"',
+        'ten.lead': 'Diez es el estándar del trabajo excelente. Diez es la forma corta de una respuesta completa. Diez es lo que queremos ser para cada cliente al que servimos.',
+        'ten.c1.title': 'Trabajo de máximo nivel',
+        'ten.c1.body': 'Apuntamos a un 10 en cada encargo, con socios senior implicados de principio a fin.',
+        'ten.c2.title': 'Una respuesta completa',
+        'ten.c2.body': 'Un único interlocutor coordina auditoría, fiscal, legal, consultoría y tecnología juntos.',
+        'ten.c3.title': 'Una alianza seleccionada',
+        'ten.c3.body': 'Firmas independientes especialistas, escogidas y alineadas bajo un mismo estándar de cuidado.',
+        'ten.c4.title': 'Global por diseño',
+        'ten.c4.body': 'Cercanía local en cada oficina, capacidad de red cuando el cliente cruza una frontera.',
+        'services.eyebrow': 'Qué hacemos',
+        'services.title': 'Cinco disciplinas. Una respuesta integrada.',
+        'services.lead': 'Cada línea opera con su propia profundidad de especialización, unidas por un mismo estándar de calidad, comunicación y responsabilidad.',
+        'service.audit.title': 'Auditoría',
+        'service.audit.body': 'Revisión independiente, control interno y transparencia que generan confianza ante accionistas, reguladores y socios.',
+        'service.tax.title': 'Fiscal',
+        'service.tax.body': 'Planificación fiscal estratégica, cumplimiento y asesoramiento especializado para grupos, empresa familiar y operaciones transfronterizas.',
+        'service.legal.title': 'Legal',
+        'service.legal.body': 'Asesoramiento mercantil, societario, contractual y regulatorio con tres décadas de experiencia en el mundo empresarial.',
+        'service.consulting.title': 'Consultoría y Corporate Finance',
+        'service.consulting.body': 'Estrategia, transformación, valoraciones y soporte a operaciones para que los equipos directivos actúen con convicción.',
+        'service.tech.title': 'Tecnología y Software',
+        'service.tech.body': 'Transformación digital, datos, automatización, IA y soluciones de software a medida pensadas para cómo funciona realmente tu negocio.',
+        'model.eyebrow': 'Cómo funciona la red',
+        'model.title': 'Una marca común. Firmas especialistas. Una alianza escalable.',
+        'model.lead': 'T10Global está diseñada para que el cliente siempre sienta un solo equipo, y para que las firmas miembro mantengan la independencia que necesitan para ser las mejores en su disciplina.',
+        'model.s1.step': '01 · Marca',
+        'model.s1.title': 'Un sello común de calidad',
+        'model.s1.body': 'T10Global representa una promesa compartida: implicación senior, pensamiento integrado y comunicación clara en cada encargo.',
+        'model.s2.step': '02 · Firmas',
+        'model.s2.title': 'Especialistas, no generalistas',
+        'model.s2.body': 'Cada firma miembro lidera su disciplina. Juntas, cubren todas las necesidades de una empresa moderna y ambiciosa.',
+        'model.s3.step': '03 · Alianza',
+        'model.s3.title': 'Diseñada para crecer',
+        'model.s3.body': 'El modelo escala con naturalidad: pueden sumarse nuevas oficinas, disciplinas y socios sin diluir el estándar.',
+        'why.eyebrow': 'Por qué T10Global',
+        'why.title': 'Construida en torno a lo que el cliente realmente valora.',
+        'why.lead': 'Cuatro principios que aparecen en cada encargo, desde la primera conversación hasta una relación de varios años.',
+        'why.c1.title': 'Liderado por socios',
+        'why.c1.body': 'Un socio senior se implica en cada encargo, de principio a fin. Sin traspasos tras la reunión inicial.',
+        'why.c2.title': 'Comunicación constante',
+        'why.c2.body': 'Clara, rápida y honesta. Los clientes saben de nosotros antes de preguntar y nunca tienen que perseguir una actualización.',
+        'why.c3.title': 'Respuesta integrada',
+        'why.c3.body': 'Cuando un tema cruza varias disciplinas, los especialistas adecuados llegan juntos, no en cola.',
+        'why.c4.title': 'Impulsada por la tecnología',
+        'why.c4.body': 'Herramientas modernas, automatización e IA están dentro de cada línea de servicio, no solo en la práctica tecnológica.',
+        'offices.eyebrow': 'Dónde encontrarnos',
+        'offices.title': 'Dos oficinas. Un solo equipo.',
+        'offices.lead': 'Sede en las Islas Canarias y presencia en el centro de Madrid.',
+        'offices.hq.tag': 'Sede',
+        'offices.hq.title': 'Santa Cruz de Tenerife',
+        'offices.hq.body': 'Av. de Anaga 24<br>38001 Santa Cruz de Tenerife<br>Islas Canarias, España',
+        'offices.md.tag': 'Oficina',
+        'offices.md.title': 'Madrid',
+        'offices.md.body': 'Paseo de la Castellana 95<br>28046 Madrid<br>España',
+        'cta.title': 'Hablemos de lo que viene.',
+        'cta.lead': 'Cuéntanos sobre tu negocio, tu reto o la oportunidad que tienes delante. Un socio te responderá en un día laborable.',
+        'cta.button': 'info@t10global.com',
+        'footer.tagline': 'Una alianza seleccionada de firmas profesionales: auditoría, fiscal, legal, consultoría y tecnología, prestadas como un solo equipo.',
+        'footer.services': 'Servicios',
+        'footer.network': 'Red',
+        'footer.contact': 'Contacto',
+        'footer.why': 'Por qué T10Global',
+        'footer.hqline': 'Sede — Tenerife, España',
+        'footer.mdline': 'Oficina — Madrid, España',
+        'footer.copyright': '© 2026 T10Global. Todos los derechos reservados.',
+        'footer.legal.privacy': 'Privacidad',
+        'footer.legal.notice': 'Aviso legal',
+        'footer.legal.cookies': 'Cookies',
+        '_doc.title': 'T10Global — Una red global de firmas profesionales de primer nivel',
+        '_doc.description': 'T10Global es una alianza seleccionada de firmas profesionales que ofrece servicios de auditoría, fiscal, legal, consultoría y tecnología a empresas ambiciosas.'
+      }
+    };
+
+    var STORAGE_KEY = 't10_lang';
+    var html = document.documentElement;
+    var langButtons = document.querySelectorAll('.lang-toggle button');
+    var nodes = document.querySelectorAll('[data-i18n]');
+
+    function pickInitialLang() {
+      try {
+        var saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === 'en' || saved === 'es') return saved;
+      } catch (e) {}
+      var browser = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      return browser.indexOf('es') === 0 ? 'es' : 'en';
+    }
+
+    function applyLang(lang) {
+      var dict = i18n[lang] || i18n.en;
+      html.lang = lang;
+
+      nodes.forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (!key || !dict[key]) return;
+        // address bodies use <br> so we honour HTML when the key is for an address
+        if (key.indexOf('offices.hq.body') === 0 || key.indexOf('offices.md.body') === 0) {
+          el.innerHTML = dict[key];
+        } else {
+          el.textContent = dict[key];
+        }
+      });
+
+      // document title + meta description
+      if (dict['_doc.title']) document.title = dict['_doc.title'];
+      var descEl = document.querySelector('meta[name="description"]');
+      if (descEl && dict['_doc.description']) descEl.setAttribute('content', dict['_doc.description']);
+
+      // toggle button state
+      langButtons.forEach(function (btn) {
+        var active = btn.getAttribute('data-lang') === lang;
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    }
+
+    langButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var target = btn.getAttribute('data-lang');
+        if (!target) return;
+        document.body.classList.add('lang-fade', 'fading');
+        setTimeout(function () {
+          applyLang(target);
+          document.body.classList.remove('fading');
+          setTimeout(function () {
+            document.body.classList.remove('lang-fade');
+          }, 200);
+        }, 140);
+      });
+    });
+
+    applyLang(pickInitialLang());
+
+    // Scroll-reveal animation
+    if ('IntersectionObserver' in window) {
+      var reveals = document.querySelectorAll('[data-reveal]');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll('[data-reveal]').forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+    }
+  })();
+  </script>
+</body>
+</html>
