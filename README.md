@@ -52,7 +52,7 @@ Search `index.html` for the comment block near the top:
 ```html
 <!--
   REPLACE BEFORE LAUNCH:
-  - Office addresses (currently placeholders in Tenerife + Madrid)
+  - Office addresses (currently placeholders in Tenerife)
   - Contact email: info@t10global.com
   - JSON-LD Organization sameAs (LinkedIn, etc.)
   - Open Graph image (currently omitted - add og-image.png if needed)
