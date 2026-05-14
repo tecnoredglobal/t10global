@@ -774,34 +774,92 @@
       .services-grid { grid-template-columns: repeat(3, 1fr); }
       .why-grid { grid-template-columns: repeat(2, 1fr); }
       .ten-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-      .hero-card { max-width: 480px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-card { max-width: 520px; }
     }
 
     @media (max-width: 880px) {
       nav.primary ul { display: none; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
       .model-grid { grid-template-columns: 1fr; }
       .offices-grid { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr 1fr; }
-      section { padding: 64px 0; }
-      .hero { padding: 64px 0 56px; }
+      section { padding: 60px 0; }
+      .hero { padding: 56px 0 48px; }
+      .section-title { margin-bottom: 44px; }
     }
 
     @media (max-width: 620px) {
-      .container { width: min(100% - 28px, var(--container)); }
-      .services-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr; }
-      .ten-grid { grid-template-columns: 1fr; }
-      .stats { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .hero-actions .btn { width: 100%; }
-      .cta-box { flex-direction: column; align-items: flex-start; }
-      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .container { width: calc(100% - 32px); }
+      .hero { padding: 40px 0 36px; }
+      section { padding: 48px 0; }
+      .section-title { margin-bottom: 32px; }
+      .hero-grid { gap: 28px; }
+
+      /* Compact hero card on mobile */
+      .hero-card { max-width: 100%; padding: 20px 16px; }
+      .constellation { max-width: 180px; margin-bottom: 16px; }
+
+      /* Stats: stay as 3 columns, tighten sizing */
+      .stats { grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 100%; }
+      .stat { padding: 12px 10px; }
+      .stat strong { font-size: 1.35rem; }
+      .stat span { font-size: 0.78rem; }
+
+      /* Buttons */
+      .hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+
+      /* Grids: 2 columns on mobile instead of 1 */
+      .services-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .ten-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .model-grid { gap: 12px; }
+
+      /* Tighten card padding on mobile */
+      .service { padding: 20px 16px; }
+      .ten-card { padding: 20px 16px; }
+      .why-card { padding: 20px 16px; }
+      .model-card { padding: 24px 20px; }
+      .office { padding: 24px 20px; }
+
+      /* Pillar rows: stack label and tag vertically */
+      .pillar { flex-direction: column; gap: 3px; align-items: flex-start; }
+      .pillar-tag { font-size: 0.72rem; }
+
+      /* CTA section */
+      .cta-box { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .cta .btn-ghost-light { width: 100%; justify-content: center; }
+
+      /* Footer: 2-col grid, brand spans full width */
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 24px;
+      }
+      .footer-brand { grid-column: 1 / -1; }
+
+      /* Hide nav CTA, shrink brand */
       .nav-cta { display: none; }
       .office { flex-direction: column; gap: 16px; }
       .brand-wordmark .t,
       .brand-wordmark .ten,
-      .brand-wordmark .global { font-size: 1.3rem; }
+      .brand-wordmark .global { font-size: 1.25rem; }
+
+      /* Footer bottom */
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .footer-legal { flex-wrap: wrap; gap: 10px 18px; }
+    }
+
+    @media (max-width: 430px) {
+      /* Very small phones: collapse to single column for dense grids */
+      .services-grid { grid-template-columns: 1fr; gap: 10px; }
+      .stats { gap: 8px; }
+      .stat { padding: 10px 8px; }
+      .stat strong { font-size: 1.2rem; }
+      .hero h1 { font-size: 2.1rem; }
+      .hero-lead { font-size: 1rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 24px; }
+      .footer-brand { grid-column: auto; }
     }
   </style>
 </head>
@@ -878,8 +936,8 @@
               <span data-i18n="hero.stat1">Integrated service lines</span>
             </div>
             <div class="stat">
-              <strong>2</strong>
-              <span data-i18n="hero.stat2">Offices across Spain</span>
+              <strong>1</strong>
+              <span data-i18n="hero.stat2">Office in Tenerife</span>
             </div>
             <div class="stat">
               <strong>1</strong>
@@ -1201,7 +1259,7 @@
         'nav.about': 'About',
         'nav.services': 'Services',
         'nav.model': 'Model',
-        'nav.offices': 'Offices',
+        'nav.offices': 'Office',
         'nav.contact': 'Contact',
         'hero.eyebrow': 'Global network of professional firms',
         'hero.title.part1': 'The top ten disciplines.',
@@ -1210,7 +1268,7 @@
         'hero.cta.primary': 'Explore our services',
         'hero.cta.secondary': 'Talk to us',
         'hero.stat1': 'Integrated service lines',
-        'hero.stat2': 'Offices across Spain',
+        'hero.stat2': 'Office in Tenerife',
         'hero.stat3': 'Unified global network',
         'pillar.audit': 'Audit',
         'pillar.audit.tag': 'Trust & control',
@@ -1275,7 +1333,6 @@
         'offices.hq.tag': 'Headquarters',
         'offices.hq.title': 'Santa Cruz de Tenerife',
         'offices.hq.body': 'Av. de Anaga 24<br>38001 Santa Cruz de Tenerife<br>Canary Islands, Spain',
-        'offices.md.tag': 'Office',
         'cta.title': "Let's talk about what's next.",
         'cta.lead': 'Tell us about your business, your challenge or the opportunity in front of you. A partner will get back to you within one working day.',
         'cta.button': 'info@t10global.com',
@@ -1297,7 +1354,7 @@
         'nav.about': 'Nosotros',
         'nav.services': 'Servicios',
         'nav.model': 'Modelo',
-        'nav.offices': 'Oficinas',
+        'nav.offices': 'Oficina',
         'nav.contact': 'Contacto',
         'hero.eyebrow': 'Red global de firmas profesionales',
         'hero.title.part1': 'Las diez disciplinas clave.',
@@ -1306,7 +1363,7 @@
         'hero.cta.primary': 'Ver nuestros servicios',
         'hero.cta.secondary': 'Hablemos',
         'hero.stat1': 'Líneas de servicio integradas',
-        'hero.stat2': 'Oficinas en España',
+        'hero.stat2': 'Oficina en Tenerife',
         'hero.stat3': 'Red global unificada',
         'pillar.audit': 'Auditoría',
         'pillar.audit.tag': 'Confianza y control',
@@ -1366,7 +1423,8 @@
         'why.c4.title': 'Impulsada por la tecnología',
         'why.c4.body': 'Herramientas modernas, automatización e IA están dentro de cada línea de servicio, no solo en la práctica tecnológica.',
         'offices.eyebrow': 'Dónde encontrarnos',
-        'offices.title': 'Dos oficinas. Un solo equipo.',
+        'offices.title': 'Nuestra oficina.',
+        'offices.lead': 'Sede en las Islas Canarias.',
         'offices.hq.tag': 'Sede',
         'offices.hq.title': 'Santa Cruz de Tenerife',
         'offices.hq.body': 'Av. de Anaga 24<br>38001 Santa Cruz de Tenerife<br>Islas Canarias, España',
