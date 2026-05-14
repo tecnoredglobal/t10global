@@ -1,0 +1,18 @@
+# Next.js
+.next/
+out/
+.vercel/
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Cloudflare
+.wrangler/cache/
+
+# OS
+.DS_Store
