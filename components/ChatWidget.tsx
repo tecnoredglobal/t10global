@@ -44,6 +44,13 @@ export default function ChatWidget() {
     }
   }, [isOpen]) // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Refresh welcome message on language change if no user messages yet
+  useEffect(() => {
+    if (isOpen && !messages.some((m) => m.role === 'user')) {
+      setMessages([{ role: 'bot', content: t('chat.welcome') }])
+    }
+  }, [lang]) // eslint-disable-line react-hooks/exhaustive-deps
+
   // Scroll to bottom on new messages
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
